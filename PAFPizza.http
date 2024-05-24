@@ -1,0 +1,41 @@
+@PAFPizza_HostAddress = http://localhost:5118
+
+###
+#Méthode GET  pour Pizza##
+GET http://localhost:5118/pizza/ 
+Accept: application/json
+
+#Méthode GET  pour Pizza dont l'Id = 1##
+GET http://localhost:5118/pizza/1 
+Accept: application/json
+
+#Méthode GET  pour Pizza dont l'Id = 5##
+#il retourne erreur 404 ##
+GET http://localhost:5118/pizza/5 
+Accept: application/json
+
+#Méthode POST  pour Pizza##
+POST http://localhost:5118/pizza/
+Content-Type: application/json
+
+{
+  "name": "Hawai",
+  "isGlutenFree": "false"
+}
+#Méthode PUT  pour Pizza##
+PUT http://localhost:5118/pizza/3
+Content-Type: application/json
+
+{
+  "id": "3",
+  "name": "Hawaiian",
+  "isGlutenFree": "false"
+}
+
+#Méthode GET  pour Pizza dont l'Id = 3##
+GET http://localhost:5118/pizza/3 
+Accept: application/json
+
+#Méthode DELETE  pour Pizza dont l'Id = 3##
+DELETE http://localhost:5118/pizza/3 
+Content-Type: application/json
